@@ -1,0 +1,11 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discovery-server
+
+eureka:
+  client:
+    register-with-eureka: false   # server khud register nahi karega
+    fetch-registry: false         # server ko registry fetch nahi karni
