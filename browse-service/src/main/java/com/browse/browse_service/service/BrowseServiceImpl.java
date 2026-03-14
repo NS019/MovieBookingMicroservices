@@ -26,7 +26,7 @@ public class BrowseServiceImpl implements BrowseService {
 
         List<ShowResponse> shows =
                 webClient.get()
-                .uri("http://localhost:8083/shows")
+                .uri("lb://show-service/shows")
                 .retrieve()
                 .bodyToFlux(ShowResponse.class)
                 .collectList()
