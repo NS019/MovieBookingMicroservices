@@ -9,4 +9,6 @@ public interface TheatreService {
     Theatre createTheatre(Theatre theatre);
 
     List<Theatre> getAllTheatres();
+    
+    Theatre getTheatreById(Long theatreId);
 }
