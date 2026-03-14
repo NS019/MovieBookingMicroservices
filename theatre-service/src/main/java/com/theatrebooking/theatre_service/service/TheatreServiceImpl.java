@@ -22,4 +22,10 @@ public class TheatreServiceImpl implements TheatreService{
     public List<Theatre> getAllTheatres() {
         return theatreRepository.findAll();
     }
+    
+    @Override
+    public Theatre getTheatreById(Long theatreId) {
+        return theatreRepository.findById(theatreId)
+                .orElseThrow(() -> new RuntimeException("Theatre not found"));
+    }
 }
