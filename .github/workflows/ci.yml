@@ -32,7 +32,10 @@ jobs:
       - name: Build All Modules
         run: mvn clean install -DskipTests
 
-      - name: SonarCloud Scan
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+     - name: SonarCloud Scan
+  env:
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  run: |
+    mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+      -Dsonar.projectKey=NS019_MovieBookingMicroservices \
+      -Dsonar.organization=ns019
