@@ -16,11 +16,32 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup Java
+      - name: Setup Java 17
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: '17'
 
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Build Discovery Server
+        run: mvn -f discovery-server/pom.xml clean install -DskipTests
+
+      - name: Build Config Server
+        run: mvn -f config-server/pom.xml clean install -DskipTests
+
+      - name: Build Movie Service
+        run: mvn -f movie-service/pom.xml clean install -DskipTests
+
+      - name: Build Theatre Service
+        run: mvn -f theatre-service/pom.xml clean install -DskipTests
+
+      - name: Build Show Service
+        run: mvn -f show-service/pom.xml clean install -DskipTests
+
+      - name: Build Booking Service
+        run: mvn -f booking-service/pom.xml clean install -DskipTests
+
+      - name: Build Browse Service
+        run: mvn -f browse-service/pom.xml clean install -DskipTests
+
+      - name: Build API Gateway
+        run: mvn -f api-gateway/pom.xml clean install -DskipTests
