@@ -11,4 +11,6 @@ public interface TheatreService {
     List<Theatre> getAllTheatres();
     
     Theatre getTheatreById(Long theatreId);
+
+	Theatre updateTheatre(Long id, Theatre theatre);
 }

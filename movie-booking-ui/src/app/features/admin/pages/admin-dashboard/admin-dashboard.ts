@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../../../shared/material.module';
-import { DashboardService } from '../../service/dashboard.service';
+import { DashboardService } from '../../movies/service/dashboard.service';
 
 
 
@@ -23,6 +23,7 @@ constructor(private dashboardService:DashboardService){}
 
 ngOnInit(){
 
+    /*
 this.dashboardService.getMovies()
 .subscribe((data:any)=> this.movies=data.length);
 
@@ -34,7 +35,7 @@ this.dashboardService.getShows()
 
 this.dashboardService.getBookings()
 .subscribe((data:any)=> this.bookings=data.length);
-
+*/
 }
 
 }
