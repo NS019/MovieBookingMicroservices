@@ -1,5 +1,7 @@
 package com.moviebooking.movie_service.entities;
 
+import java.time.Instant;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +18,16 @@ public class Movie {
 	private String language;
 
 	private int duration;
+
+	private Instant releaseDate;
+
+	public Instant getReleaseDate() {
+		return releaseDate;
+	}
+
+	public void setReleaseDate(Instant releaseDate) {
+		this.releaseDate = releaseDate;
+	}
 
 	public long getId() {
 		return id;

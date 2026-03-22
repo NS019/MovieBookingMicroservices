@@ -1,0 +1,32 @@
+<p>theatre.management works!</p>
+<mat-card>
+    <h2>Add Theatre</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="theatreName">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address">
+        </mat-form-field>
+
+        <!-- City DropDown -->
+        <mat-form-field>
+            <mat-label>Select City</mat-label>
+            <mat-select formControlName="cityId">
+                @for (c of cities; track c.cityId) {
+                <mat-option [value]="c.cityId">
+                    {{c.cityName}}
+                </mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button-color="primary">
+            Add Theatre
+        </button>
+    </form>
+</mat-card>
